@@ -1,28 +1,32 @@
-# 📈 Pronóstico de Series Temporales y Volatilidad Financiera
+# 📈 Rentabilidad y volatilidad de fondos sostenibles (FIS) vs. tradicionales (FIC) en Colombia
 
-Este repositorio contiene el desarrollo analítico y los modelos implementados para mi trabajo de grado, enfocados en el análisis avanzado de series temporales, pruebas estadísticas de validación y modelado predictivo aplicado a fondos de inversión y activos financieros.
+*English summary: forecasting return and volatility of sustainable (FIS) vs. traditional (FIC) mutual funds in Colombia (2023–2025) using ARIMA, GARCH, Prophet and LSTM. Master's thesis, Universidad de La Salle.*
 
----
+## Contexto
+Trabajo de grado de la Maestría en Analítica e Inteligencia de Negocios (Universidad de La Salle)
 
-## 📂 Estructura del Repositorio
+**Mi contribución:** el código en Python de este repositorio (pruebas estadísticas, modelos de rentabilidad y modelos de volatilidad). La investigación, el marco teórico y la sustentación fueron trabajo conjunto del equipo.
 
-El proyecto está organizado en la carpeta `notebooks/`, la cual contiene los siguientes cuadernos de trabajo ejecutados en Google Colab:
+**Pregunta de investigación:** ¿son los fondos de inversión sostenibles (FIS) una mejor alternativa que los tradicionales (FIC) en términos de rentabilidad y volatilidad en Colombia?
 
-1. **`EB_FIC_vs_FIS_Batería_de_pruebas.ipynb`**
-   * *Descripción:* Conjunto completo de pruebas estadísticas y diagnósticos sobre las series (evaluación de estacionariedad, normalidad, autocorrelación y residuos).
-2. **`EB_FIC_vs_FIS_Modelos_py_rentabilidad.ipynb`**
-   * *Descripción:* Implementación, entrenamiento y evaluación de modelos orientados al pronóstico de la rentabilidad y comportamiento de la serie temporal.
-3. **`EB_FIC_vs_FIS_Modelos_py_Volatilidad.ipynb`**
-   * *Descripción:* Modelado econométrico y análisis enfocado en la estimación y predicción de la volatilidad financiera.
+## Datos y metodología
+- **Muestra:** 4 fondos, 2 FIS (BBVA Páramo, Sostenible Global) y 2 FIC (BBVA FAM, Valor Plus I) de las mismas administradoras.
+- **Periodo:** 24 sep 2023 – 30 sep 2025, observaciones diarias. Fuente: Asofiduciarias.
+- **Diagnóstico estadístico:** ADF y Phillips-Perron (estacionariedad), Ljung-Box (autocorrelación), Jarque-Bera y Shapiro-Wilk (normalidad), ARCH-LM (heterocedasticidad).
+- **Modelos:** AutoARIMA, Prophet, GARCH y LSTM, con partición cronológica 80/20, búsqueda en malla de hiperparámetros y evaluación con RMSE y MAE.
+- **Pronóstico de rentabilidad:** ARIMA fue el mejor modelo en 3 de 4 fondos; LSTM ganó en el más volátil (Sostenible Global, RMSE 20,74 frente a 46,66 de los modelos clásicos).
+- **Pronóstico de volatilidad:** LSTM superó a GARCH en los cuatro fondos.
 
----
+## Limitaciones
+Muestra exploratoria (solo 2 FIS con historial suficiente) y series cortas, que afectan el aprendizaje del LSTM. Los resultados son evidencia preliminar y no deben generalizarse.
 
-## 🛠️ Tecnologías y Librerías Utilizadas
-* **Lenguaje:** Python 🐍
-* **Entorno de desarrollo:** Google Colab / Jupyter Notebooks
-* **Librerías principales:** Pandas, NumPy, Statsmodels, Scikit-Learn (y librerías especializadas de series temporales y econometría).
+## Estructura
+1. `01_pruebas_estadisticas.ipynb`: estacionariedad, normalidad, autocorrelación y residuos.
+2. `02_modelos_rentabilidad.ipynb`: pronóstico de rentabilidad.
+3. `03_modelos_volatilidad.ipynb`: modelado y pronóstico de volatilidad.
 
----
+## Tecnologías
+Python · Google Colab
 
-## 🚀 ¿Cómo explorar este proyecto?
-Puedes visualizar los cuadernos directamente haciendo clic en la carpeta `notebooks/` en este repositorio de GitHub, o abrirlos interactivos mediante Google Colab clonando o descargando los archivos `.ipynb`.
+## Cómo ejecutarlo
+Instala las dependencias con `pip install -r requirements.txt` y abre los notebooks en orden, o directamente en Colab.
