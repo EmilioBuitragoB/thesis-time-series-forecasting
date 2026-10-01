@@ -1,4 +1,4 @@
-# 📈 Rentabilidad y volatilidad de fondos sostenibles (FIS) vs. tradicionales (FIC) en Colombia (2023–2025)
+# Rentabilidad y volatilidad de fondos sostenibles (FIS) vs. tradicionales (FIC) en Colombia (2023–2025)
 
 *English summary: forecasting return and volatility of sustainable (FIS) vs. traditional (FIC) mutual funds in Colombia using ARIMA, GARCH, Prophet and LSTM. Master's thesis, Universidad de La Salle.*
 
